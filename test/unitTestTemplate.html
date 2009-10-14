@@ -15,26 +15,25 @@
         <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/yuitest/yuitest-min.js">
         </script>
         <script type="text/javascript">
-                var oTestCase = new YAHOO.tool.TestCase({
-                
-                    name: "TestCase Name",
-                    
-                    setUp: function(){
-                        this.Assert = YAHOO.util.Assert;
-                    },
-                
-                    tearDown: function(){
-                
-                    }
-,
-                    testSomething : function () {
-                        
-                    },
+            var oTestCase = new YAHOO.tool.TestCase({
             
-                    testSomethingElse : function () {
-                        
-                    }
-                });
+                name: "TestCase Name",
+                
+                setUp: function(){
+                    this.Assert = YAHOO.util.Assert;
+                },
+                
+                tearDown: function(){
+                
+                },
+                testSomething: function(){
+                    this.Assert.isTrue(true);
+                },
+                
+                testSomethingElse: function(){
+                    this.Assert.isFalse(!true);
+                }
+            });
             
             YAHOO.util.Event.onDOMReady(function(){
                 //create the logger
@@ -46,11 +45,8 @@
                 //run all tests
                 YAHOO.tool.TestRunner.run();
             });
-            
         </script>
-
     </head>
     <body>
-    	
     </body>
 </html>
